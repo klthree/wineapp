@@ -47,4 +47,5 @@ VALUES ('Cabernet Sauvignon'),
         ('Malbec'),
         ('Zinfandel'),
         ('Gewurztraminer'),
-        ('Gamay Noir');
+        ('Gamay Noir'),
+        ('Nero d''Avola');
