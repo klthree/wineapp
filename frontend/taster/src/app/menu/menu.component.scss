@@ -1,0 +1,14 @@
+#navbar {
+    display: grid;
+    height: 100vh;
+    align-items: center;
+}
+
+#navbar a {
+    text-decoration: none;
+    text-align: center;
+}
+
+#navbar a:hover {
+    text-decoration: underline;
+}
