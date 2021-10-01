@@ -21,8 +21,10 @@ export class NewWineFormComponent implements OnInit {
   formGroup = new FormGroup({
     winery: new FormControl(''),
     year: new FormControl(0),
-    wineName: new FormControl(''),
-    color: new FormControl('')
+    wine: new FormControl(''),
+    color: new FormControl(''),
+    alcohol: new FormControl(''),
+    isSparkling: new FormControl('')
   })
 
   ngOnInit(): void {

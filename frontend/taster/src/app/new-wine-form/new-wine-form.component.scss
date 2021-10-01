@@ -1,16 +1,27 @@
-// form {
-//     font-family: Arial, Helvetica, sans-serif;
-//     font-size: 1.3em;
+form {
+    border: 1px solid black;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
 
-//     display: grid;
-//     grid-template-columns: 1fr 2fr;
-//     grid-template-rows: 1fr 1fr 1fr;
-//     gap: 20px;
-//     grid-template-areas:
-//         wineryLabel wineryBox
-//         yearLabel yearBox
-//         nameLabel nameBox;
-// }
+    // display: grid;
+    // grid-template-columns: 1fr 2fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    // gap: 20px;
+    // grid-template-areas:
+    //     wineryLabel wineryBox
+    //     yearLabel yearBox
+    //     nameLabel nameBox;
+}
+
+label {
+    display: block;
+}
+
+#alcohol-input {
+    width: 36px;
+}
+
 
 // #winery {
 //     grid-area: wineryLabel;
