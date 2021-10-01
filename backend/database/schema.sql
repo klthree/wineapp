@@ -92,7 +92,7 @@ CREATE TABLE wines (
     year INT CHECK (year > 1800),
     alcohol_percentage DECIMAL(5, 2) CHECK (alcohol_percentage > 0 AND alcohol_percentage < 100),
     color TEXT NOT NULL,
-    isSparkling BOOLEAN DEFAULT FALSE NOT NULL,
+    is_sparkling BOOLEAN DEFAULT FALSE NOT NULL,
 
     CONSTRAINT fk_winery FOREIGN KEY(winery_id) REFERENCES wineries(winery_id)
 );

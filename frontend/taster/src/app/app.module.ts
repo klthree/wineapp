@@ -2,19 +2,31 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
+import { HomeMenuComponent } from './home-menu/home-menu.component';
 import { NewWineFormComponent } from './new-wine-form/new-wine-form.component';
+import { ContentPagesTemplateComponent } from './content-pages-template/content-pages-template.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { WineListComponent } from './wine-list/wine-list.component';
+import { LoginComponent } from './login/login.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    NewWineFormComponent
+    HomeMenuComponent,
+    NewWineFormComponent,
+    ContentPagesTemplateComponent,
+    NavigationComponent,
+    WineListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

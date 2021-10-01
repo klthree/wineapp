@@ -1,2 +1,4 @@
-package info.michaelbuckner.projects.wineapp.dto;public class GrapeDTO {
+package info.michaelbuckner.projects.wineapp.dto;
+
+public class GrapeDTO {
 }

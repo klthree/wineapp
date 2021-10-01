@@ -1,1 +1,10 @@
-<p>new-wine-form works!</p>
+<form [formGroup]=formGroup>
+    <label for="wineryName" id="winery">Winery:</label>    
+    <input type="text" formControlName="winery" id="wineryName"/>
+
+    <label for="yearOfWine" id="year">Year:</label>
+    <input type="text" formControlName="year" id="yearOfWine"/>
+
+    <label for="wine" id="wineName">Wine Name:</label>
+    <input type="text" formControlName="wineName" id="wine"/>
+</form>
