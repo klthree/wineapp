@@ -28,6 +28,7 @@ export class NewWineFormComponent implements OnInit {
   })
 
   ngOnInit(): void {
+    console.log("Wine form loaded")
   }
 
 }

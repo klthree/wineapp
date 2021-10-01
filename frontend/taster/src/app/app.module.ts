@@ -11,6 +11,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { WineListComponent } from './wine-list/wine-list.component';
 import { LoginComponent } from './login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TastedComponent } from './tasted/tasted.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ContentPagesTemplateComponent,
     NavigationComponent,
     WineListComponent,
-    LoginComponent
+    LoginComponent,
+    TastedComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

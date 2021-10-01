@@ -12,18 +12,23 @@ import { Wine } from './wine';
 })
 export class WineService {
 
-  private winesUrl = "api/wines";
+  // private winesUrl = "api/wines";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
 
+  constructor() { }
 
-
-  constructor(private http: HttpClient) { }
-  
   // getWines
+  getWines(): Wine[] {
+    return WINES;
+  }
+
+  getTastedWines(): Wine[] {
+    return WINES;
+  }
   // getWine
   // updateWine
   // addWine
