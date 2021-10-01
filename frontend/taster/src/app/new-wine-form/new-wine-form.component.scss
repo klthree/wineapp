@@ -18,15 +18,12 @@ form {
         "submitButton submitButton";
 }
 
-// label {
-//     display: block;
-// }
 
 #winery-label {
     grid-area: wineryLabel;
 }
 #winery-input {
-    width: 300px;
+    width: .75em;
     grid-area: wineryInput;
 }
 

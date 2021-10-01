@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TastedComponent } from './tasted/tasted.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { FormElementComponent } from './form-element/form-element.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     WineListComponent,
     LoginComponent,
     TastedComponent,
-    WishlistComponent
+    WishlistComponent,
+    FormElementComponent
   ],
   imports: [
     BrowserModule,
