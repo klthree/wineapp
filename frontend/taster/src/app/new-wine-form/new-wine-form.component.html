@@ -1,51 +1,11 @@
 <form [formGroup]=formGroup id="add-wine-form">
-    <div class="formElement">
-        <label for="winery-input" id="winery-label">
-            Winery:
-        </label>
-        <input type="text" formControlName="winery" id="winery-input"/> 
-    </div>
 
-    <div class="formElement">
-        <label for="year-input" id="year-label">
-            Year:
-        </label>
-        <input type="text" formControlName="year" id="year-input"/>
-    </div>
+    <app-form-element [label]="labels.wineryLabel"></app-form-element>
+    <app-form-element [label]="labels.yearLabel"></app-form-element>
+    <app-form-element [label]="labels.wineLabel"></app-form-element>
+    <app-form-element-select [label]="labels.colorLabel" [options]="colorsOptions"></app-form-element-select>
+    <app-form-element-select [label]="labels.sparklingLabel" [options]="sparklingOptions"></app-form-element-select>
+    <app-form-element [label]="labels.alcoholLabel"></app-form-element>
 
-    <div class="formElement">
-        <label for="wine-input" id="wine-label">
-            Wine Name:
-        </label>
-        <input type="text" formControlName="wine" id="wine-input"/>    
-    </div>
-
-    <div class="formElement">
-        <label for="color-input" id="color-label">
-            Color:
-        </label>
-        <select formControlName="color" id="color-input">
-            <option value="red">Red</option>
-            <option value="white">White</option>
-            <option value="rose">Rose</option>
-        </select>
-    </div>
-
-    <div class="formElement">
-        <label for="alcohol-input" id="alcohol-label">
-            Alcohol %:
-        </label>
-        <input type="text" formControlName="alcohol" id="alcohol-input"/>
-    </div>
-
-    <div class="formElement">
-        <label for="sparkling-input" id="sparkling-label">
-            Sparkling:
-        </label>
-        <select formControlName="isSparkling" id="sparkling-input">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
-    </div>
     <button type="submit">Add Wine</button>
 </form>

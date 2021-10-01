@@ -18,6 +18,19 @@ export class NewWineFormComponent implements OnInit {
 
   constructor() { }
 
+  labels = {
+    wineryLabel: "Winery",
+    yearLabel: "Year",
+    wineLabel: "Wine Name",
+    colorLabel: "Color",
+    alcoholLabel: "Alcohol %",
+    sparklingLabel: "Sparkling"
+  }
+
+  
+  colorsOptions = ["Red", "White", "Rose"];
+  sparklingOptions = ["Yes", "No"];
+  
   formGroup = new FormGroup({
     winery: new FormControl(''),
     year: new FormControl(0),
