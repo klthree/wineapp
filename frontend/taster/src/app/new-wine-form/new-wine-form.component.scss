@@ -2,44 +2,80 @@ form {
     border: 1px solid black;
     width: 100%;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: 1.3em;
+    // font-size: 1em;
 
-    // display: grid;
-    // grid-template-columns: 1fr 2fr;
-    // grid-template-rows: 1fr 1fr 1fr;
-    // gap: 20px;
-    // grid-template-areas:
-    //     wineryLabel wineryBox
-    //     yearLabel yearBox
-    //     nameLabel nameBox;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    
+    gap: 20px;
+    grid-template-areas:
+        "wineryLabel wineryInput"
+        "yearLabel yearInput"
+        "wineLabel wineInput"
+        "colorLabel colorInput"
+        "sparklingLabel sparklingInput"
+        "alcoholLabel alcoholInput"
+        "submitButton submitButton";
 }
 
-label {
-    display: block;
+// label {
+//     display: block;
+// }
+
+#winery-label {
+    grid-area: wineryLabel;
+}
+#winery-input {
+    width: 300px;
+    grid-area: wineryInput;
 }
 
+#year-label {
+    grid-area: yearLabel;
+}
+#year-input {
+    width: 300px;
+    grid-area: yearInput;
+}
+
+#wine-label {
+    grid-area: wineLabel;
+}
+#wine-input {
+    width: 300px;
+    grid-area: wineInput;
+}
+
+#color-label {
+    grid-area: colorLabel;
+}
+#color-input {
+    width: 50px;
+    grid-area: colorInput;
+}
+
+#alcohol-label {
+    grid-area: alcoholLabel;
+}
 #alcohol-input {
-    width: 36px;
+    width: 50px;
+    grid-area: alcoholInput;
+}
+
+#sparkling-label {
+    grid-area: sparklingLabel;
+}
+#sparkling-input {
+    width: 50px;
+    grid-area: sparklingInput;
+}
+
+button {
+    grid-area: submitButton;
 }
 
 
-// #winery {
-//     grid-area: wineryLabel;
-// }
-
-// #year {
-//     grid-area: yearLabel;
-// }
-
-// #wineName {
-//     grid-area: nameLabel;
-// }
-
-// #wineryName {
-//     gridArea: wineryBox;
-// }
-
-// #wine {
+// #wine-label {
 //     gridArea: wineBox;
 // }
 
