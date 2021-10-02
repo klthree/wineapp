@@ -1,75 +1,78 @@
-form {
-    border: 1px solid black;
-    width: 100%;
+:host {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    // font-size: 1em;
+}
 
+h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+form {
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    
     gap: 20px;
-    grid-template-areas:
-        "wineryLabel wineryInput"
-        "yearLabel yearInput"
-        "wineLabel wineInput"
-        "colorLabel colorInput"
-        "sparklingLabel sparklingInput"
-        "alcoholLabel alcoholInput"
-        "submitButton submitButton";
+    // grid-template-areas:
+    //     "wineryLabel wineryInput"
+    //     "yearLabel yearInput"
+    //     "wineLabel wineInput"
+    //     "colorLabel colorInput"
+    //     "sparklingLabel sparklingInput"
+    //     "alcoholLabel alcoholInput"
+    //     "submitButton submitButton";
 }
 
 
-#winery-label {
-    grid-area: wineryLabel;
-}
-#winery-input {
-    width: .75em;
-    grid-area: wineryInput;
-}
+// #winery-label {
+//     grid-area: wineryLabel;
+// }
+// #winery-input {
+//     width: .75em;
+//     grid-area: wineryInput;
+// }
 
-#year-label {
-    grid-area: yearLabel;
-}
-#year-input {
-    width: 300px;
-    grid-area: yearInput;
-}
+// #year-label {
+//     grid-area: yearLabel;
+// }
+// #year-input {
+//     width: 300px;
+//     grid-area: yearInput;
+// }
 
-#wine-label {
-    grid-area: wineLabel;
-}
-#wine-input {
-    width: 300px;
-    grid-area: wineInput;
-}
+// #wine-label {
+//     grid-area: wineLabel;
+// }
+// #wine-input {
+//     width: 300px;
+//     grid-area: wineInput;
+// }
 
-#color-label {
-    grid-area: colorLabel;
-}
-#color-input {
-    width: 50px;
-    grid-area: colorInput;
-}
+// #color-label {
+//     grid-area: colorLabel;
+// }
+// #color-input {
+//     width: 50px;
+//     grid-area: colorInput;
+// }
 
-#alcohol-label {
-    grid-area: alcoholLabel;
-}
-#alcohol-input {
-    width: 50px;
-    grid-area: alcoholInput;
-}
+// #alcohol-label {
+//     grid-area: alcoholLabel;
+// }
+// #alcohol-input {
+//     width: 50px;
+//     grid-area: alcoholInput;
+// }
 
-#sparkling-label {
-    grid-area: sparklingLabel;
-}
-#sparkling-input {
-    width: 50px;
-    grid-area: sparklingInput;
-}
+// #sparkling-label {
+//     grid-area: sparklingLabel;
+// }
+// #sparkling-input {
+//     width: 50px;
+//     grid-area: sparklingInput;
+// }
 
-button {
-    grid-area: submitButton;
-}
+// button {
+//     grid-area: submitButton;
+// }
 
 
 // #wine-label {
