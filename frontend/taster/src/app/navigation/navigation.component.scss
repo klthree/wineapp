@@ -1,8 +1,6 @@
 #navbar {
     display: flex;
-    flex-grow: 1;
     justify-content: space-around;
-    border-bottom: 1px solid gray;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
@@ -11,6 +9,7 @@
 }
 
 a {
+    flex-basis: 22.5%;
     text-decoration: none;
     color: #000;
     padding-bottom: 5px;
@@ -19,4 +18,8 @@ a {
 
 a:hover {
     padding-top: 2px;
+}
+
+#profile {
+    flex-basis: 5%;
 }

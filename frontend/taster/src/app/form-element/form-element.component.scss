@@ -1,4 +1,13 @@
-#tester {
-    color:darkorange;
-    font-family: 'Times New Roman', Times, serif;
+:host {
+    display: flex;
 }
+
+#label {
+    flex-basis: 30%;
+}
+
+// input {
+//     width: 100px;
+//     margin-left: 100px;
+// }
+
