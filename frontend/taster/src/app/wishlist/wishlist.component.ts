@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-wishlist',
   templateUrl: './wishlist.component.html',
-  styleUrls: ['./wishlist.component.scss']
+  styleUrls: ['../styles/lists.css']
 })
 export class WishlistComponent implements OnInit {
 

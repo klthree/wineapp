@@ -1,5 +1,5 @@
 #titlebar {
-    background-color: rgb(241, 98, 93);
+    background-color: rgba(241, 98, 93, 0.726);
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     // font-size: x-large;
     text-align: center;
@@ -12,7 +12,8 @@ header {
 }
 
 main {
-    margin-top: 0px;
+    margin-top: 0%;
+    padding-top: 0px;
     width: 100%;
     background-color: rgb(252, 245, 251);
 }

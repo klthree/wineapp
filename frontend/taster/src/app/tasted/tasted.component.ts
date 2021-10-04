@@ -5,7 +5,7 @@ import { WineService } from '../wine.service';
 @Component({
   selector: 'app-tasted',
   templateUrl: './tasted.component.html',
-  styleUrls: ['./tasted.component.scss']
+  styleUrls: ['../styles/lists.css']
 })
 export class TastedComponent implements OnInit {
 

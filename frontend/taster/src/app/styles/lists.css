@@ -1,0 +1,24 @@
+:host {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    padding-top: 0px;
+}
+
+ul {
+    margin-top: 0px;
+}
+
+li {
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px solid black;
+}
+
+a {
+    text-decoration: none;
+    color:rgb(53, 64, 75);
+}
+
+a:hover {
+    font-size:larger;
+}

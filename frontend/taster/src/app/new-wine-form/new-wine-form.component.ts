@@ -27,7 +27,7 @@ export class NewWineFormComponent implements OnInit {
     sparklingLabel: "Sparkling"
   }
   
-  colorsOptions = ["Red", "White", "Rose"];
+  colorsOptions = ["Red", "White", "Rose", "Orange"];
   sparklingOptions = ["Yes", "No"];
   
   formGroup = new FormGroup({

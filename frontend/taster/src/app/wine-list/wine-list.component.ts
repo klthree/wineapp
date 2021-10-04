@@ -5,7 +5,7 @@ import { Wine } from '../wine';
 @Component({
   selector: 'app-wine-list',
   templateUrl: './wine-list.component.html',
-  styleUrls: ['./wine-list.component.scss']
+  styleUrls: ['../styles/lists.css']
 })
 export class WineListComponent implements OnInit {
 
