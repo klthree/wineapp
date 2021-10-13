@@ -11,8 +11,6 @@ import { LoginComponent } from './login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TastedComponent } from './tasted/tasted.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
-import { FormElementComponent } from './form-element/form-element.component';
-import { FormElementSelectComponent } from './form-element-select/form-element-select.component';
 
 @NgModule({
   declarations: [

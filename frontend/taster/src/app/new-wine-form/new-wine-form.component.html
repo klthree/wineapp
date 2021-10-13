@@ -1,13 +1,37 @@
-<h1>Enter Wine Details:</h1>
-
 <form [formGroup]=formGroup id="add-wine-form">
+    <label for="winery-input" id="winery-label">
+        Winery: <input type="text" formControlName="winery" id="winery-input"/>
+    </label>    
+    
 
-    <app-form-element [label]="labels.wineryLabel"></app-form-element>
-    <app-form-element [label]="labels.yearLabel"></app-form-element>
-    <app-form-element [label]="labels.wineLabel"></app-form-element>
-    <app-form-element-select [label]="labels.colorLabel" [options]="colorsOptions"></app-form-element-select>
-    <app-form-element-select [label]="labels.sparklingLabel" [options]="sparklingOptions"></app-form-element-select>
-    <app-form-element [label]="labels.alcoholLabel"></app-form-element>
+    <label for="year-input" id="year-label">
+        Year: <input type="text" formControlName="year" id="year-input"/>
+    </label>
+    
+
+    <label for="wine-input" id="wine-label">
+        Wine Name: <input type="text" formControlName="wine" id="wine-input"/>
+    </label>
+    
+    
+    <label for="color-input" id="color-label">
+        Color: <select formControlName="color" id="color-input">
+            <option value="red">Red</option>
+            <option value="white">White</option>
+            <option value="rose">Rose</option>
+        </select>
+    </label>
+
+    <label for="alcohol-input" id="alcohol-label">
+        Alcohol Percentage: <input type="text" formControlName="alcohol" id="alcohol-input"/>
+    </label>
+
+    <label for="sparkling-input" id="sparkling-label">
+        Sparkling: <select formControlName="isSparkling" id="sparkling-input">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+    </label>
 
     <button type="submit">Add Wine</button>
 </form>

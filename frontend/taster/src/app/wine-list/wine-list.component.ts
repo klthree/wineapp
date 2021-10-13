@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WineService } from '../wine.service';
-import { Wine } from '../wine';
+import { WINES } from '../mock-wines';
 
 @Component({
   selector: 'app-wine-list',
@@ -9,17 +8,11 @@ import { Wine } from '../wine';
 })
 export class WineListComponent implements OnInit {
 
-  constructor(private wineService: WineService) { }
+  constructor() { }
 
-  wines: Wine[] = [];
-
-  getAllWines(): void {
-    this.wines = this.wineService.getWines();
-  }
+  wines = WINES;
 
   ngOnInit(): void {
-    console.log("wines loaded");
-    this.getAllWines();
   }
 
 }
