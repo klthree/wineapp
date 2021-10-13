@@ -26,6 +26,7 @@ export class NewWineFormComponent implements OnInit {
     alcoholLabel: "Alcohol %",
     sparklingLabel: "Sparkling"
   }
+
   
   colorsOptions = ["Red", "White", "Rose", "Orange"];
   sparklingOptions = ["Yes", "No"];
