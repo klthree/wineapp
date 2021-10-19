@@ -1,37 +1,53 @@
 <form [formGroup]=formGroup id="add-wine-form">
-    <label for="winery-input" id="winery-label">
-        Winery: <input type="text" formControlName="winery" id="winery-input"/>
-    </label>    
+    <div class=form-element>
+        <label for="winery-input" id="winery-label">
+            Winery:
+        </label>
+        <input type="text" formControlName="winery" id="winery-input" class="expanding-text-box"/> 
+    </div>
     
+    <div class=form-element>
+        <label for="year-input" id="year-label">
+            Year:
+        </label>
+        <input type="text" formControlName="year" id="year-input" class="expanding-text-box"/>
+    </div>
 
-    <label for="year-input" id="year-label">
-        Year: <input type="text" formControlName="year" id="year-input"/>
-    </label>
-    
+    <div class=form-element>
+        <label for="wine-input" id="wine-label">
+            Wine Name:
+        </label>
+        <input type="text" formControlName="wine" id="wine-input" class="expanding-text-box"/>    
+    </div>
 
-    <label for="wine-input" id="wine-label">
-        Wine Name: <input type="text" formControlName="wine" id="wine-input"/>
-    </label>
-    
-    
-    <label for="color-input" id="color-label">
-        Color: <select formControlName="color" id="color-input">
+    <div class=form-element>
+        <label for="color-input" id="color-label">
+            Color:
+        </label>
+        <select formControlName="color" id="color-input">
             <option value="red">Red</option>
             <option value="white">White</option>
             <option value="rose">Rose</option>
+            <option value="orange">Orange</option>
         </select>
-    </label>
+    </div>
 
-    <label for="alcohol-input" id="alcohol-label">
-        Alcohol Percentage: <input type="text" formControlName="alcohol" id="alcohol-input"/>
-    </label>
+    <div class=form-element>
+        <label for="sparkling-input" id="sparkling-label">
+            Sparkling:
+        </label>
+        <select formControlName="isSparkling" id="sparkling-input">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
 
-    <label for="sparkling-input" id="sparkling-label">
-        Sparkling: <select formControlName="isSparkling" id="sparkling-input">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-    </select>
-    </label>
+    <div class=form-element>
+        <label for="alcohol-input" id="alcohol-label">
+            Alcohol %:
+        </label>
+        <input type="text" formControlName="alcohol" id="alcohol-input"/>
+    </div>
 
-    <button type="submit">Add Wine</button>
+    <button type="submit" (click)="add()">Add Wine</button>
 </form>

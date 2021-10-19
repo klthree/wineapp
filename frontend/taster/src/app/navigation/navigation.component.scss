@@ -8,12 +8,15 @@
 
 #profile {
     text-align: center;
+    flex-basis: 5%;
 }
 
 a {
+    flex-basis: 22.5%;
     text-decoration: none;
-    color: #000;
+    color: maroon;
     padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 a:hover {

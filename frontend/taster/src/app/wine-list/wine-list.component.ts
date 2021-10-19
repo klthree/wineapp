@@ -4,7 +4,7 @@ import { WINES } from '../mock-wines';
 @Component({
   selector: 'app-wine-list',
   templateUrl: './wine-list.component.html',
-  styleUrls: ['../styles/lists.css']
+  styleUrls: ['../styles/lists.scss', '../styles/fonts.scss']
 })
 export class WineListComponent implements OnInit {
 

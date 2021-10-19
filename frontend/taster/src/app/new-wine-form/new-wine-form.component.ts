@@ -12,28 +12,15 @@ import { FormControl, FormGroup } from '@angular/forms';
   //   winery: <input type="text" />
     
   // `,
-  styleUrls: ['./new-wine-form.component.scss']
+  styleUrls: ['./new-wine-form.component.scss', '../styles/fonts.scss']
 })
 export class NewWineFormComponent implements OnInit {
 
   constructor() { }
 
-  labels = {
-    wineryLabel: "Winery",
-    yearLabel: "Year",
-    wineLabel: "Wine Name",
-    colorLabel: "Color",
-    alcoholLabel: "Alcohol %",
-    sparklingLabel: "Sparkling"
-  }
-
-  
-  colorsOptions = ["Red", "White", "Rose", "Orange"];
-  sparklingOptions = ["Yes", "No"];
-  
   formGroup = new FormGroup({
     winery: new FormControl(''),
-    year: new FormControl(0),
+    year: new FormControl(),
     wine: new FormControl(''),
     color: new FormControl(''),
     alcohol: new FormControl(''),
@@ -43,4 +30,7 @@ export class NewWineFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  add() {
+    alert("Adding wine...")
+  }
 }
