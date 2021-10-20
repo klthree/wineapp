@@ -1,19 +1,41 @@
 :host {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     font-size: 1.2em;
+}
+
+#aspect-name {
+    font-size: larger;
+    width: 15%;
+    flex-grow: 1;
+    padding-bottom: 10px;
 }
 
 #groupName {
     display: flex;
-    padding-left: 20px;
-}
-
-#aspect-name {
-    width: 15%;
+    // flex-grow: 3;
+    flex-grow: 5;
 }
 
 #groupName label {
     padding-right: 5px;
-    padding-left: 50px;
+}
+
+.radio-element {
+    display: flex;
+    flex-grow: 1;
+    height: 1.5em;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(min-width: 768px) {
+    :host {
+        flex-direction: row;
+    }
+
+    #aspect-name {
+        font-size: xx-large;
+    }
 }

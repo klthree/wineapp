@@ -8,30 +8,6 @@ form {
     flex-direction: column;
 }
 
-@media (min-width:768px) {
-    .form-element {
-        display: flex;
-        flex-direction: column;
-    }
-    label {
-        width: 300px;
-        padding-bottom: 5px;
-    }
-    
-    .expanding-text-box {
-        // flex-grow: .7;
-        width: 300px;
-    }
-
-    #year-input {
-        width: 100px;
-    }
-
-    button {
-        width: 50%;
-    }
-}
-
 .form-element {
     display: flex;
     justify-content: space-between;
@@ -60,102 +36,37 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    // width: 50%;
+    width: 100%;
     height: 60px;
     margin-top: 20px;
     font-size: 1.4em;
     color: maroon;
-    background-color:rgb(255, 228, 225);
+    background-color:rgba(255, 190, 183, 0.767);
     border-radius: 4px;
     border: solid 1px rgb(128, 0, 0);
 }
 
-// form {
-//     border: 1px solid black;
-//     width: 100%;
-//     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-//     // font-size: 1em;
 
-//     display: grid;
-//     grid-template-columns: 1fr 2.5fr;
+@media (min-width:768px) {
+    .form-element {
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        width: 300px;
+        padding-bottom: 5px;
+    }
     
-//     gap: 20px;
-//     grid-template-areas:
-//         "wineryLabel wineryInput"
-//         "yearLabel yearInput"
-//         "wineLabel wineInput"
-//         "colorLabel colorInput"
-//         "sparklingLabel sparklingInput"
-//         "alcoholLabel alcoholInput"
-//         "submitButton submitButton";
-// }
+    .expanding-text-box {
+        // flex-grow: .7;
+        width: 300px;
+    }
 
-// // label {
-// //     display: block;
-// // }
+    #year-input {
+        width: 100px;
+    }
 
-// #winery-label {
-//     grid-area: wineryLabel;
-// }
-// #winery-input {
-//     min-width: 0px;
-//     overflow: hidden;
-//     display: block;
-//     border: 1px green solid;
-//     margin-right: 10%;
-//     // width: 75%;
-//     grid-area: wineryInput;
-// }
-
-// #year-label {
-//     grid-area: yearLabel;
-// }
-// #year-input {
-//     width: 300px;
-//     grid-area: yearInput;
-// }
-
-// #wine-label {
-//     grid-area: wineLabel;
-// }
-// #wine-input {
-//     width: 300px;
-//     grid-area: wineInput;
-// }
-
-// #color-label {
-//     grid-area: colorLabel;
-// }
-// #color-input {
-//     width: 50px;
-//     grid-area: colorInput;
-// }
-
-// #alcohol-label {
-//     grid-area: alcoholLabel;
-// }
-// #alcohol-input {
-//     width: 50px;
-//     grid-area: alcoholInput;
-// }
-
-// #sparkling-label {
-//     grid-area: sparklingLabel;
-// }
-// #sparkling-input {
-//     width: 50px;
-//     grid-area: sparklingInput;
-// }
-
-// button {
-//     grid-area: submitButton;
-// }
-
-
-// // #wine-label {
-// //     gridArea: wineBox;
-// // }
-
-// // #yearOfWine {
-// //     gridArea: yearBox;
-// // }
+    button {
+        width: 20%;
+    }
+}

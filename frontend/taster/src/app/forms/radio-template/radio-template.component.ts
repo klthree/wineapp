@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-radio-template',
