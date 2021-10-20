@@ -12,7 +12,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   //   winery: <input type="text" />
     
   // `,
-  styleUrls: ['./new-wine-form.component.scss', '../styles/fonts.scss']
+  styleUrls: ['./new-wine-form.component.scss', '../../styles/fonts.scss']
 })
 export class NewWineFormComponent implements OnInit {
 

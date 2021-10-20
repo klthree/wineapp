@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+}
+
+#groupName {
+    display: flex;
+    padding-left: 20px;
+}
+
+#aspect-name {
+    width: 15%;
+}
+
+#groupName label {
+    padding-right: 5px;
+    padding-left: 50px;
+}

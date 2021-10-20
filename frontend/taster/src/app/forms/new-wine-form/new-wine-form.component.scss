@@ -14,7 +14,8 @@ form {
         flex-direction: column;
     }
     label {
-        width: 10px;
+        width: 300px;
+        padding-bottom: 5px;
     }
     
     .expanding-text-box {
@@ -39,7 +40,7 @@ form {
 
 
 label {
-    width: 100px;
+    width: 300px;
 }
 
 h1 {
@@ -64,9 +65,9 @@ button {
     margin-top: 20px;
     font-size: 1.4em;
     color: maroon;
-    background-color:mistyrose;
+    background-color:rgb(255, 228, 225);
     border-radius: 4px;
-    border: solid 1px maroon;
+    border: solid 1px rgb(128, 0, 0);
 }
 
 // form {
