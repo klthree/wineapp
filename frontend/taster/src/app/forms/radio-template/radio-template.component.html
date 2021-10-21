@@ -1,23 +1,23 @@
 <label for=groupName id="aspect-name">{{ groupName | titlecase }}: </label>
-<div id=groupName>
+<div id=groupName [formGroup]="radioGroup">
     <div class="radio-element">
         <label for="1">1</label>
-        <input type="radio" id="1" name={{groupName}} value=1 class="rad-button">
+        <input type="radio" id="1" value=1 class="rad-button" formControlName="degree" (change)=sendDegree()>
     </div>
     <div class="radio-element">
         <label for="2">2</label>
-        <input type="radio" id="2" name={{groupName}} value=2 class="rad-button">
+        <input type="radio" id="2" value=2 class="rad-button" formControlName="degree" (change)=sendDegree()>
     </div>
     <div class="radio-element">
         <label for="3">3</label>
-        <input type="radio" id="3" name={{groupName}} value=3 class="rad-button">
+        <input type="radio" id="3" value=3 class="rad-button" formControlName="degree" (change)=sendDegree() checked>
     </div>
     <div class="radio-element">
         <label for="4">4</label>
-        <input type="radio" id="4" name={{groupName}} value=4 class="rad-button">
+        <input type="radio" id="4" value=4 class="rad-button" formControlName="degree" (change)=sendDegree()>
     </div>
     <div class="radio-element">
         <label for="5">5</label>
-        <input type="radio" id="5" name={{groupName}} value=5 class="rad-button">
+        <input type="radio" id="5" value=5 class="rad-button" formControlName="degree" (change)=sendDegree()>
     </div>
 </div>

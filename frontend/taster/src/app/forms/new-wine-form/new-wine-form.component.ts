@@ -4,14 +4,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-new-wine-form',
   templateUrl: './new-wine-form.component.html',
-  // template: `
-  //   Wine Name: <input type="text" formControlName="wineName" />
-  //   <br/>
-  //   year: <input type="text" />
-  //   <br/>
-  //   winery: <input type="text" />
-    
-  // `,
   styleUrls: ['./new-wine-form.component.scss', '../../styles/fonts.scss']
 })
 export class NewWineFormComponent implements OnInit {

@@ -6,20 +6,30 @@ main {
 
 #titlebar {
     background-color: rgba(255, 190, 183, 0.767);
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    // font-size: x-large;
     text-align: center;
+    height: 115px;
 }
 
 header {
     font-weight: bolder;
     font-size: xx-large;
     color: maroon;
+    padding-top: 10px;
 }
 
-main {
+nav {
+    padding-top: 20px;
+}
+
+main { 
     margin-top: 0%;
     padding-top: 0px;
     width: 100%;
-    background-color: rgb(255, 254, 255);
+    background-color: rgb(255, 253, 255);
+}
+
+@media(min-width: 544px) {
+    #titlebar {
+        height: 95px;
+    }
 }

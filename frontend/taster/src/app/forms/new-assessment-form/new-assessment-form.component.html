@@ -1,5 +1,5 @@
-<app-radio-template [groupName]="aspectLabels.acidity"></app-radio-template>
-<app-radio-template [groupName]="aspectLabels.tannins"></app-radio-template>
-<app-radio-template [groupName]="aspectLabels.sweetness"></app-radio-template>
-<app-radio-template [groupName]="aspectLabels.body"></app-radio-template>
-<app-radio-template [groupName]="aspectLabels.burn"></app-radio-template>
+<app-radio-template [groupName]="aspectLabels.acidity" (degreeEmitter)="setAttr($event, 'acidity')"></app-radio-template>
+<app-radio-template [groupName]="aspectLabels.tannins" (degreeEmitter)="setAttr($event, 'tannins')" ></app-radio-template>
+<app-radio-template [groupName]="aspectLabels.sweetness" (degreeEmitter)="setAttr($event, 'sweetness')" ></app-radio-template>  
+<app-radio-template [groupName]="aspectLabels.body" (degreeEmitter)="setAttr($event, 'body')" ></app-radio-template>  
+<app-radio-template [groupName]="aspectLabels.burn" (degreeEmitter)="setAttr($event, 'burn')" ></app-radio-template>  

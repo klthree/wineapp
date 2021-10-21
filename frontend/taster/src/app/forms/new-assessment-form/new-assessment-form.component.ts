@@ -17,7 +17,19 @@ export class NewAssessmentFormComponent implements OnInit {
     burn: "burn"
   }
 
+  flavorProfile: {[key: string]: number} = {
+    acidity: 3,
+    tannins: 3,
+    sweetness: 3,
+    body: 3,
+    burn: 3
+  }
+
   ngOnInit(): void {
   }
 
+  setAttr(degree: number, attribute: string) {
+    this.flavorProfile[attribute] = degree;
+    console.log(this.flavorProfile);
+  }
 }
