@@ -1,5 +1,24 @@
-<app-radio-template [groupName]="aspectLabels.acidity" (degreeEmitter)="setAttr($event, 'acidity')"></app-radio-template>
-<app-radio-template [groupName]="aspectLabels.tannins" (degreeEmitter)="setAttr($event, 'tannins')" ></app-radio-template>
-<app-radio-template [groupName]="aspectLabels.sweetness" (degreeEmitter)="setAttr($event, 'sweetness')" ></app-radio-template>  
-<app-radio-template [groupName]="aspectLabels.body" (degreeEmitter)="setAttr($event, 'body')" ></app-radio-template>  
-<app-radio-template [groupName]="aspectLabels.burn" (degreeEmitter)="setAttr($event, 'burn')" ></app-radio-template>  
+<app-radio-template [groupName]="aspectLabels.acidity" (degreeEmitter)="setAttr($event, aspectLabels.acidity)"></app-radio-template>
+<app-radio-template [groupName]="aspectLabels.tannins" (degreeEmitter)="setAttr($event, aspectLabels.tannins)" ></app-radio-template>
+<app-radio-template [groupName]="aspectLabels.sweetness" (degreeEmitter)="setAttr($event, aspectLabels.sweetness)" ></app-radio-template>  
+<app-radio-template [groupName]="aspectLabels.body" (degreeEmitter)="setAttr($event, aspectLabels.body)" ></app-radio-template>  
+<app-radio-template [groupName]="aspectLabels.burn" (degreeEmitter)="setAttr($event, aspectLabels.burn)" ></app-radio-template>  
+
+<div [formGroup]="descriptionGroup">
+    <div class="description">
+        <label for="visual">Appearance. Consider color and body.</label>
+        <textarea name="visual" id="visual" formControlName="visual"></textarea>
+    </div>
+
+    <div class="description">
+        <label for="olfactory">Smell. What notes stand out?</label>
+        <textarea name="olfactory" id="olfactory" formControlName="olfactory"></textarea>
+    </div>
+
+    <div class="description">
+        <label for="taste">Taste. What are its dominant flavors?</label>
+        <textarea name="taste" id="taste" formControlName="taste"></textarea>
+    </div>
+</div>
+
+<button type="submit" (click)="submitAssessment()">Submit</button>

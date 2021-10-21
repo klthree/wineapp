@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-radio-template',
   templateUrl: './radio-template.component.html',
-  styleUrls: ['./radio-template.component.scss', '../../styles/fonts.scss']
+  styleUrls: ['./radio-template.component.scss']
 })
 export class RadioTemplateComponent implements OnInit {
 

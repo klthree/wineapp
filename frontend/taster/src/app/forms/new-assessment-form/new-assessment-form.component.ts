@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ASSESSMENTS } from 'src/app/mock-assessments';
 
 @Component({
   selector: 'app-new-assessment-form',
@@ -17,13 +19,22 @@ export class NewAssessmentFormComponent implements OnInit {
     burn: "burn"
   }
 
-  flavorProfile: {[key: string]: number} = {
+  flavorProfile: {[key: string]: number | string} = {
     acidity: 3,
     tannins: 3,
     sweetness: 3,
     body: 3,
-    burn: 3
+    burn: 3,
+    visual: '',
+    olfactory: '',
+    taste: ''
   }
+
+  descriptionGroup = new FormGroup({
+    visual: new FormControl(),
+    olfactory: new FormControl(),
+    taste: new FormControl()
+  })
 
   ngOnInit(): void {
   }
@@ -31,5 +42,14 @@ export class NewAssessmentFormComponent implements OnInit {
   setAttr(degree: number, attribute: string) {
     this.flavorProfile[attribute] = degree;
     console.log(this.flavorProfile);
+  }
+
+  submitAssessment() {
+    this.flavorProfile.visual = this.descriptionGroup.controls.visual.value;
+    this.flavorProfile.olfactory = this.descriptionGroup.controls.olfactory.value;
+    this.flavorProfile.taste = this.descriptionGroup.controls.taste.value;
+
+    ASSESSMENTS.push(this.flavorProfile);
+    console.log(ASSESSMENTS);
   }
 }
