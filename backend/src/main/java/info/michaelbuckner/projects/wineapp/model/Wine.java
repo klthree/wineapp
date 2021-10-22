@@ -15,9 +15,9 @@ public class Wine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int wineId;
 
-    @ManyToOne
+//    @ManyToOne
     @JoinColumn(name = "winery_id", nullable = false)
-    private Winery winery;
+    private int wineryId;
 
     @Column(name = "wine_name")
     private String wineName;

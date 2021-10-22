@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
-@RequestMapping("/taster/v1")
+@RequestMapping("/taste/v1")
 public class Controller {
 
     @Autowired
@@ -33,12 +33,12 @@ public class Controller {
 
     @PutMapping("/{id}")
     public WineDTO update(@PathVariable("id") final int pId, @RequestBody final WineDTO pWineDTO) {
-        return wineRepository.findById(pId)
-                .or(() -> {
-                    pWineDTO.setWineId(pId);
-                    return WineDTO.of(wineRepository.save(pWineDTO.toWine()));
-                })
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+//        return wineRepository.findById(pId)
+//                .or(() -> {
+//                    pWineDTO.setWineId(pId);
+//                    return WineDTO.of(wineRepository.save(pWineDTO.toWine())); // <-- Needs to be an optional
+//                })
+//                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 
         if (wineRepository.existsById(pId)) {
             pWineDTO.setWineId(pId);

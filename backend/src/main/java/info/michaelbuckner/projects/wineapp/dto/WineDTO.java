@@ -12,7 +12,7 @@ import java.util.List;
 public class WineDTO {
 
     private int wineId;
-    private Winery winery;
+    private int wineryId;
     private String wineName;
     private int year;
     private double alcoholPercentage;
@@ -28,7 +28,7 @@ public class WineDTO {
         wine.setAlcoholPercentage(alcoholPercentage);
         wine.setColor(color);
         wine.setSparkling(iSparkling);
-        wine.setWinery(winery);
+        wine.setWineryId(wineryId);
 
         return wine;
     }
@@ -37,7 +37,7 @@ public class WineDTO {
         WineDTO wineDTO = new WineDTO();
 
         wineDTO.setWineId(wine.getWineId());
-        wineDTO.setWinery(wine.getWinery());
+        wineDTO.setWineryId(wine.getWineryId());
         wineDTO.setWineName(wine.getWineName());
         wineDTO.setColor(wine.getColor());
         wineDTO.setYear(wine.getYear());

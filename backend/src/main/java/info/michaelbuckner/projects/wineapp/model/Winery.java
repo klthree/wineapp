@@ -21,6 +21,6 @@ public class Winery {
     @Column(name = "region_id")
     private int regionId;
 
-    @OneToMany(mappedBy = "winery")
-    private Set<Wine> wines;
+//    @OneToMany(mappedBy = "winery_id")
+//    private Set<Wine> wines;
 }
