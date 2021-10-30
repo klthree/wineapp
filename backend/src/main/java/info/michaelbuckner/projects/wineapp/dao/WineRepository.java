@@ -6,7 +6,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface WineRepository extends CrudRepository<Wine, Integer> {
+public interface WineRepository extends PagingAndSortingRepository<Wine, Integer> {
 
 
 }
