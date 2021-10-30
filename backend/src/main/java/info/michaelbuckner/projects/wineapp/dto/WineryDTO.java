@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class WineryDTO {
 
-    private int wineryId;
-    private int regionId;
+    private Integer wineryId;
+    private Integer regionId;
     private String wineryName;
 
     public Winery toWinery() {

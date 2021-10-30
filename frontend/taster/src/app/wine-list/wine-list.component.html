@@ -1,7 +1,7 @@
 <ul>
     <li *ngFor="let wine of wines" role="listitem">
-        <a routerLink="/wines/:wine.id">
-            {{ wine.name }}
+        <a routerLink="/wine/{{wine.id}}">
+            {{ wine.wineName }}
             {{ wine.winery }}
         </a>
     </li>

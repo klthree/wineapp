@@ -16,70 +16,77 @@ DROP SEQUENCE IF EXISTS seq_region_id;
 DROP SEQUENCE IF EXISTS seq_wine_grape_id;
 DROP SEQUENCE IF EXISTS seq_subregion_id;
 DROP SEQUENCE IF EXISTS seq_assessment_id;
+DROP SEQUENCE IF EXISTS seq_region_grape_id;
 
 CREATE SEQUENCE seq_wine_id
-    START 1000
+    START 10000
     INCREMENT BY 1
-    MAXVALUE 1999
-    MINVALUE 1000
+    MINVALUE 10000
+    MAXVALUE 19999
     CACHE 1;
 
 CREATE SEQUENCE seq_winery_id
-    START 2000
+    START 20000
     INCREMENT BY 1
-    MAXVALUE 2999
-    MINVALUE 2000
+    MINVALUE 20000
+    MAXVALUE 29999
     CACHE 1;
 
 CREATE SEQUENCE seq_grape_id
-    START 3000
+    START 30000
     INCREMENT BY 1
-    MAXVALUE 3999
-    MINVALUE 3000
+    MINVALUE 30000
+    MAXVALUE 39999
     CACHE 1;
 
 CREATE SEQUENCE seq_region_id
-    START 4000
+    START 40000
     INCREMENT BY 1
-    MAXVALUE 4999
-    MINVALUE 4000
+    MINVALUE 40000
+    MAXVALUE 49999
     CACHE 1;
 
 CREATE SEQUENCE seq_subregion_id
-    START 5000
+    START 50000
     INCREMENT BY 1
-    MAXVALUE 5999
-    MINVALUE 5000
+    MINVALUE 50000
+    MAXVALUE 59999
     CACHE 1;
 
 CREATE SEQUENCE seq_assessment_id
-    START 10000
+    START 60000
     INCREMENT BY 1
-    NO MAXVALUE
-    MINVALUE 10000;
+    MINVALUE 60000
+    MAXVALUE 69999;
 
 CREATE SEQUENCE seq_wine_grape_id
-    START 6000
+    START 70000
     INCREMENT BY 1
-    MAXVALUE 6999
-    MINVALUE 6000;
+    MINVALUE 70000
+    MAXVALUE 79999;
+
+CREATE SEQUENCE seq_region_grape_id
+    START 80000
+    INCREMENT BY 1
+    MINVALUE 80000
+    MAXVALUE 89999;
 
 CREATE TABLE regions (
     region_id INT DEFAULT nextval('seq_region_id') PRIMARY KEY,
-    region_name TEXT NOT NULL
+    region_name TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE subregions (
     subregion_id INT DEFAULT nextval('seq_subregion_id') PRIMARY KEY,
     region_id INT NOT NULL,
-    subregion_name TEXT NOT NULL,
+    subregion_name TEXT NOT NULL UNIQUE,
 
     CONSTRAINT fk_region FOREIGN KEY(region_id) REFERENCES regions(region_id)
 );
 
 CREATE TABLE wineries (
     winery_id INT DEFAULT nextval('seq_winery_id') PRIMARY KEY,
-    winery_name TEXT NOT NULL,
+    winery_name TEXT NOT NULL UNIQUE,
     region_id INT,
 
     CONSTRAINT fk_region FOREIGN KEY(region_id) REFERENCES regions(region_id)
@@ -94,6 +101,7 @@ CREATE TABLE wines (
     color TEXT NOT NULL,
     is_sparkling BOOLEAN DEFAULT FALSE NOT NULL,
 
+    UNIQUE (winery_id, wine_name, year),
     CONSTRAINT fk_winery FOREIGN KEY(winery_id) REFERENCES wineries(winery_id)
 );
 
@@ -114,6 +122,16 @@ CREATE TABLE wines_grapes (
 
     UNIQUE(wine_id, grape_id),
     CONSTRAINT fk_wine FOREIGN KEY(wine_id) REFERENCES wines(wine_id),
+    CONSTRAINT fk_grape FOREIGN KEY(grape_id) REFERENCES grapes(grape_id)
+);
+
+CREATE TABLE regions_grapes (
+    region_grape_id INT DEFAULT nextval('seq_region_grape_id') PRIMARY KEY,
+    region_id INT,
+    grape_id INT,
+
+    UNIQUE(region_id, grape_id),
+    CONSTRAINT fk_region FOREIGN KEY(region_id) REFERENCES regions(region_id),
     CONSTRAINT fk_grape FOREIGN KEY(grape_id) REFERENCES grapes(grape_id)
 );
 

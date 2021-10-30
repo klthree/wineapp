@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WINES } from '../mock-wines';
+import { Wine } from '../wine';
 
 @Component({
   selector: 'app-wine-list',
@@ -8,9 +9,11 @@ import { WINES } from '../mock-wines';
 })
 export class WineListComponent implements OnInit {
 
-  constructor() { }
+  wines: Wine[] = WINES;
 
-  wines = WINES;
+  constructor() {
+   }
+
 
   ngOnInit(): void {
   }

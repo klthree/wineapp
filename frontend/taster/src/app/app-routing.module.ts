@@ -5,6 +5,7 @@ import { NewWineFormComponent } from './forms/new-wine-form/new-wine-form.compon
 // import { TastedComponent } from './tasted/tasted.component';
 import { WineListComponent } from './wine-list/wine-list.component';
 import { NewAssessmentFormComponent } from './forms/new-assessment-form/new-assessment-form.component';
+import { WineDetailComponent } from './wine-detail/wine-detail.component';
 // import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   // { path: 'tasted', component: TastedComponent},
   // { path: 'wishlist', component: WishlistComponent},
   { path: 'login', component: LoginComponent },
-  { path: 'new-assessment', component: NewAssessmentFormComponent}
+  { path: 'new-assessment', component: NewAssessmentFormComponent},
+  { path: 'wine/:id', component: WineDetailComponent}
 ];
 
 @NgModule({

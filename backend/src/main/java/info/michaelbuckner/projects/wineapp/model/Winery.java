@@ -1,26 +1,33 @@
 package info.michaelbuckner.projects.wineapp.model;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "wineries")
+@Table(name = "wineries", uniqueConstraints = @UniqueConstraint(columnNames = {"winery_name"}))
 @Data
+@RequiredArgsConstructor
 public class Winery {
 
-    @Column(name = "winery_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private int wineryId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "winery_id")
+    private Integer wineryId;
 
     @Column(name = "winery_name")
     private String wineryName;
 
     @Column(name = "region_id")
-    private int regionId;
+    private Integer regionId;
 
-//    @OneToMany(mappedBy = "winery_id")
-//    private Set<Wine> wines;
+    @OneToMany(targetEntity = Wine.class, mappedBy = "winery")
+//    @JsonBackReference
+    @JsonManagedReference
+//    @EqualsAndHashCode.Exclude
+    private List<Wine> wines;
 }

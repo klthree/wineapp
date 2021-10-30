@@ -21,6 +21,6 @@ export class RadioTemplateComponent implements OnInit {
   }
 
   sendDegree() {
-    this.degreeEmitter.emit(this.radioGroup.controls.degree.value !== '0' ? this.radioGroup.controls.degree.value : 3);
+    this.degreeEmitter.emit(this.radioGroup.controls.degree.value);
   }
 }

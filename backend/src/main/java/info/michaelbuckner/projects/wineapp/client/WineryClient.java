@@ -1,4 +1,7 @@
 package info.michaelbuckner.projects.wineapp.client;
 
-public class WineryClient {
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient
+public interface WineryClient {
 }

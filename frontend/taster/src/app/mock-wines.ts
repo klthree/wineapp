@@ -3,7 +3,7 @@ import { Wine } from './wine';
 export const WINES: Wine[] = [
     {
         id: 0, 
-        name: "Cherry Wine",
+        wineName: "Cherry Wine",
         winery: "Cherry Wines",
         alcoholPercentage: 15.4,
         color: "Red",
@@ -12,7 +12,7 @@ export const WINES: Wine[] = [
     },
     {
         id: 1,
-        name: "Cabernet",
+        wineName: "Cabernet",
         winery: "French Place",
         alcoholPercentage: 12.4,
         color: "Red",
@@ -21,7 +21,7 @@ export const WINES: Wine[] = [
     },
     {
         id: 2,
-        name: "Merlot",
+        wineName: "Merlot",
         winery: "Cherry Wines",
         alcoholPercentage: 13.2,
         color: "Red",
@@ -30,7 +30,7 @@ export const WINES: Wine[] = [
     },
     {
         id: 3, 
-        name: "Sauvignon Blanc",
+        wineName: "Sauvignon Blanc",
         winery: "Kim Crawford",
         alcoholPercentage: 15.4,
         color: "Red",
@@ -39,7 +39,7 @@ export const WINES: Wine[] = [
     },
     {
         id: 4, 
-        name: "Pinot Grigio",
+        wineName: "Pinot Grigio",
         winery: "Kalispell",
         alcoholPercentage: 14.0,
         color: "White",
@@ -48,7 +48,7 @@ export const WINES: Wine[] = [
     },
     {
         id: 5, 
-        name: "Champagne",
+        wineName: "Champagne",
         winery: "Dom Perignon",
         alcoholPercentage: 13.0,
         color: "White",

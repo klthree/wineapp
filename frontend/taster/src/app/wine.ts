@@ -1,6 +1,6 @@
 export interface Wine {
     id: number;
-    name: string;
+    wineName: string;
     winery: string;
     alcoholPercentage: number;
     color: string;
