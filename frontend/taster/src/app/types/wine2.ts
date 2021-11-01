@@ -1,7 +1,7 @@
-export interface Wine {
+export interface Wine2 {
     id: number;
     wineName: string;
-    winery: string;
+    winery: object;
     alcoholPercentage: number;
     color: string;
     year: number;

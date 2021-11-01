@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ASSESSMENTS } from 'src/app/mock-assessments';
+import { WineRestService } from 'src/app/services/wine-rest.service';
 
 @Component({
   selector: 'app-new-assessment-form',
@@ -9,7 +10,7 @@ import { ASSESSMENTS } from 'src/app/mock-assessments';
 })
 export class NewAssessmentFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private wineRestService:WineRestService) { }
 
   aspectLabels = {
     acidity: "acidity",

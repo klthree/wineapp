@@ -1,11 +1,27 @@
-<form [formGroup]=formGroup id="add-wine-form">
-    <div class=form-element>
+<form [formGroup]=formGroup id="add-wine-form"
+        (ngSubmit)="onSubmit()"
+        *ngIf="isLoaded">
+    <!-- <div class=form-element>
         <label for="winery-input" id="winery-label">
             Winery:
         </label>
         <input type="text" formControlName="winery" id="winery-input" class="expanding-text-box"/> 
-    </div>
+    </div> -->
     
+    <div class=form-element>
+       <label for="region-input" id="region-label">
+           Region:
+       </label> 
+       <input type="text" formControlName="region" id="region-input" class="expanding-text-box"/> 
+    </div>
+
+    <div class=form-sub-element *ngIf="formGroup.controls.region.value">
+        <label for="subregion-input" id="subregion-label">
+            Subregion:
+        </label>
+        <input type="text" formControlName="subregion" id="subregion-input" class="expanding-text-box">
+    </div>
+
     <div class=form-element>
         <label for="year-input" id="year-label">
             Year:
@@ -17,7 +33,19 @@
         <label for="wine-input" id="wine-label">
             Wine Name:
         </label>
-        <input type="text" formControlName="wine" id="wine-input" class="expanding-text-box"/>    
+        <input type="text" formControlName="wineName" id="wine-input" class="expanding-text-box"/>    
+    </div>
+
+    <div class=form-element>
+        <label for="winery-input" id="winery-label">
+            Winery:
+        </label>
+        <select formControlName="winery" id="winery-input">
+            <option *ngFor="let w of wineries" value="w.name">
+                {{ w.wineryName }}
+                {{ w.region }}
+            </option>
+        </select>
     </div>
 
     <div class=form-element>
@@ -46,8 +74,8 @@
         <label for="alcohol-input" id="alcohol-label">
             Alcohol %:
         </label>
-        <input type="text" formControlName="alcohol" id="alcohol-input"/>
+        <input type="text" formControlName="alcoholPercentage" id="alcohol-input"/>
     </div>
 
-    <button type="submit" (click)="add()">Add Wine</button>
+    <button type="submit">Add Wine</button>
 </form>

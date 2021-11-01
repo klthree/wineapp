@@ -17,7 +17,8 @@ import java.util.Set;
 public class WineDTO {
 
     private Integer wineId;
-    private Winery winery;
+    private String wineryName;
+    private String regionName;
     private String wineName;
     private int year;
     private double alcoholPercentage;

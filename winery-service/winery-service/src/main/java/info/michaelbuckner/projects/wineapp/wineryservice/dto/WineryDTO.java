@@ -25,7 +25,7 @@ public class WineryDTO {
 
 		wineryDTO.setWinery_id(pWinery.getWineryId());
 		wineryDTO.setWinery_name(pWinery.getWineryName());
-		wineryDTO.setRegion_id(pWinery.getWineryId());
+		wineryDTO.setRegion_id(pWinery.getRegionId());
 
 		return wineryDTO;
 	}

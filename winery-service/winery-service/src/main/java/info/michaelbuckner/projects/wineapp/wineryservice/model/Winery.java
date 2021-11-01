@@ -1,9 +1,6 @@
 package info.michaelbuckner.projects.wineapp.wineryservice.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 
 @Entity

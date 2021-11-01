@@ -1,4 +1,4 @@
-import { Wine } from '../wine';
+import { Wine } from '../types/wine';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WineRestService } from '../services/wine-rest.service';

@@ -3,11 +3,11 @@ BEGIN TRANSACTION;
 DROP TABLE IF EXISTS wines_grapes;
 DROP TABLE IF EXISTS regions_grapes;
 DROP TABLE IF EXISTS grapes;
+DROP TABLE IF EXISTS assessments;
 DROP TABLE IF EXISTS wines;
 DROP TABLE IF EXISTS wineries;
 DROP TABLE IF EXISTS subregions;
 DROP TABLE IF EXISTS regions;
-DROP TABLE IF EXISTS assessments;
 
 DROP SEQUENCE IF EXISTS seq_wine_id;
 DROP SEQUENCE IF EXISTS seq_winery_id;
@@ -17,6 +17,7 @@ DROP SEQUENCE IF EXISTS seq_wine_grape_id;
 DROP SEQUENCE IF EXISTS seq_subregion_id;
 DROP SEQUENCE IF EXISTS seq_assessment_id;
 DROP SEQUENCE IF EXISTS seq_region_grape_id;
+DROP SEQUENCE IF EXISTS seq_color_id;
 
 CREATE SEQUENCE seq_wine_id
     START 10000
@@ -71,6 +72,17 @@ CREATE SEQUENCE seq_region_grape_id
     MINVALUE 80000
     MAXVALUE 89999;
 
+CREATE SEQUENCE seq_color_id
+    START 1
+    INCREMENT BY 1
+    MINVALUE 1
+    MAXVALUE 10;
+
+CREATE TABLE colors (
+    color_id INT DEFAULT nextval('seq_color_id') PRIMARY KEY,
+    color_name TEXT NOT NULL UNIQUE
+);
+
 CREATE TABLE regions (
     region_id INT DEFAULT nextval('seq_region_id') PRIMARY KEY,
     region_name TEXT NOT NULL UNIQUE
@@ -88,8 +100,10 @@ CREATE TABLE wineries (
     winery_id INT DEFAULT nextval('seq_winery_id') PRIMARY KEY,
     winery_name TEXT NOT NULL UNIQUE,
     region_id INT,
+    subregion_id INT,
 
-    CONSTRAINT fk_region FOREIGN KEY(region_id) REFERENCES regions(region_id)
+    CONSTRAINT fk_region FOREIGN KEY(region_id) REFERENCES regions(region_id),
+    CONSTRAINT fk_subregion FOREIGN KEY(subregion_id) REFERENCES subregions(subregion_id)
 );
 
 CREATE TABLE wines (
@@ -98,11 +112,12 @@ CREATE TABLE wines (
     wine_name TEXT,
     year INT CHECK (year > 1800),
     alcohol_percentage DECIMAL(5, 2) CHECK (alcohol_percentage > 0 AND alcohol_percentage < 100),
-    color TEXT NOT NULL,
+    color_id INT NOT NULL,
     is_sparkling BOOLEAN DEFAULT FALSE NOT NULL,
 
     UNIQUE (winery_id, wine_name, year),
-    CONSTRAINT fk_winery FOREIGN KEY(winery_id) REFERENCES wineries(winery_id)
+    CONSTRAINT fk_winery FOREIGN KEY(winery_id) REFERENCES wineries(winery_id),
+    CONSTRAINT fk_color FOREIGN KEY(color_id) REFERENCES colors(color_id)
 );
 
 CREATE TABLE grapes (
@@ -137,6 +152,7 @@ CREATE TABLE regions_grapes (
 
 CREATE TABLE assessments (
     assessment_id INT DEFAULT nextval('seq_assessment_id') PRIMARY KEY,
+    wine_id INT NOT NULL,
     price DECIMAL,
     acidity INT CHECK(acidity > 0 AND acidity < 6),
     sweetness INT CHECK(sweetness > 0 AND sweetness < 6),
@@ -147,7 +163,9 @@ CREATE TABLE assessments (
     sight_description TEXT,
     smell_description TEXT,
     taste_description TEXT,
-    final_assessment TEXT
+    final_assessment TEXT,
+
+    CONSTRAINT fk_wine FOREIGN KEY(wine_id) REFERENCES wines(wine_id)
 );
 
 COMMIT TRANSACTION;

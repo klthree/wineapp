@@ -26,7 +26,7 @@ VALUES  ('Spain'),
 
 
 INSERT INTO grapes (grape_name)
-VALUES ('Cabernet Sauvignon'),
+VALUES  ('Cabernet Sauvignon'),
         ('Syrah'),
         ('Cabernet Franc'),
         ('Grenache'),
@@ -48,4 +48,11 @@ VALUES ('Cabernet Sauvignon'),
         ('Zinfandel'),
         ('Gewurztraminer'),
         ('Gamay Noir'),
-        ('Nero d''Avola');
+        ('Nero d''Avola'),
+        ('Carignan');
+
+INSERT INTO colors (color_name)
+VALUES  ('red'),
+        ('white'),
+        ('rose'),
+        ('orange');

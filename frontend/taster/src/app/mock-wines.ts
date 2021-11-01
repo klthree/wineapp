@@ -1,57 +1,57 @@
-import { Wine } from './wine';
+import { Wine } from './types/wine';
 
 export const WINES: Wine[] = [
     {
         id: 0, 
         wineName: "Cherry Wine",
-        winery: "Cherry Wines",
+        wineryName: "Bad winery",
         alcoholPercentage: 15.4,
-        color: "Red",
+        color: 1,
         year: 1998,
         isSparkling: "Yes"
     },
     {
         id: 1,
         wineName: "Cabernet",
-        winery: "French Place",
+        wineryName: "Winery 2",
         alcoholPercentage: 12.4,
-        color: "Red",
+        color: 1,
         year: 2019,
         isSparkling: "No"
     },
     {
         id: 2,
         wineName: "Merlot",
-        winery: "Cherry Wines",
+        wineryName: "Cherry Wines",
         alcoholPercentage: 13.2,
-        color: "Red",
+        color: 1,
         year: 2020,
         isSparkling: "No"
     },
     {
         id: 3, 
         wineName: "Sauvignon Blanc",
-        winery: "Kim Crawford",
+        wineryName: "Kim Crawford",
         alcoholPercentage: 15.4,
-        color: "Red",
+        color: 1,
         year: 1998,
         isSparkling: "Yes"
     },
     {
         id: 4, 
         wineName: "Pinot Grigio",
-        winery: "Kalispell",
+        wineryName: "Kalispell",
         alcoholPercentage: 14.0,
-        color: "White",
+        color: 2,
         year: 2017,
         isSparkling: "No"
     },
     {
         id: 5, 
         wineName: "Champagne",
-        winery: "Dom Perignon",
+        wineryName: "Dom Perignon",
         alcoholPercentage: 13.0,
-        color: "White",
+        color: 2,
         year: 2003,
         isSparkling: "Yes"
     }

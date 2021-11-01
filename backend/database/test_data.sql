@@ -1,2 +1,2 @@
 INSERT INTO wineries (winery_name, region_id)
-VALUES ("Ghost Pines", 4019)
+VALUES ('Ghost Pines', 40019);
