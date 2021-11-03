@@ -8,7 +8,7 @@ import { Winery } from '../types/winery';
 })
 export class WineryRestService {
 
-  private wineryUrl: string = 'http://localhost:8081/winery/v1/';
+  private wineryUrl: string = 'http://localhost:8091/winery/v1/';
 
   constructor(private http: HttpClient) { }
 

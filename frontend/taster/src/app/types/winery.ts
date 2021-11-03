@@ -1,5 +1,5 @@
 export interface Winery {
-    id: number;
+    wineryId: number;
     wineryName: string;
     region: string;
     subregion: string;

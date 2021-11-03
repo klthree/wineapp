@@ -17,7 +17,7 @@ export class WineDetailComponent implements OnInit {
     this.getWine();
   }
 
-  wine: Wine | undefined;
+  wine?: Wine;
 
   getWine(): void {
     const wineId = Number(this.route.snapshot.paramMap.get('id'))

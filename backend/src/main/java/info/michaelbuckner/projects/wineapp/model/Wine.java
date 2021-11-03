@@ -1,16 +1,12 @@
 package info.michaelbuckner.projects.wineapp.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import info.michaelbuckner.projects.wineapp.client.WineryClient;
+import info.michaelbuckner.projects.wineapp.dao.WineRepository;
+import info.michaelbuckner.projects.wineapp.dto.WineDTO;
 import lombok.*;
-import org.hibernate.annotations.Cascade;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "wines")
@@ -23,35 +19,34 @@ public class Wine {
     @Column(name = "wine_id")
     private Integer wineId;
 
-    @ManyToOne(targetEntity = Winery.class, cascade = {CascadeType.ALL})
-    @JoinColumn(name = "winery_id", nullable = false)
-    @JsonBackReference
-    private Winery winery;
+    @Column(name = "winery_id")
+    private Integer wineryId;
 
     @Column(name = "wine_name")
     private String wineName;
 
     @Column(name = "year")
-    private int year;
+    private Integer year;
 
     @Column(name = "alcohol_percentage")
-    private double alcoholPercentage;
+    private Double alcoholPercentage;
 
-    @Column(name = "color")
-    private String color;
+    @Column(name = "color_id")
+    private Integer colorId;
 
     @Column(name = "is_sparkling")
-    private boolean isSparkling;
+    private Boolean isSparkling;
 
-    @ManyToMany(targetEntity = Grape.class, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinTable(
-            name = "wines_grapes",
-            joinColumns = @JoinColumn(name = "wine_id"),
-            inverseJoinColumns = @JoinColumn(name = "grape_id")
-    )
-//    @JsonManagedReference("grapes_wines")
-//    @JsonBackReference("grapes_wines")
-//    @EqualsAndHashCode.Exclude
-    @JsonIgnoreProperties("wines")
-    private List<Grape> grapes;
+    public WineDTO toWineDTO() {
+        WineDTO wineDTO = new WineDTO();
+
+        wineDTO.setWineId(wineId);
+        wineDTO.setWineName(wineName);
+        wineDTO.setColorId(colorId);
+        wineDTO.setYear(year);
+        wineDTO.setAlcoholPercentage(alcoholPercentage);
+        wineDTO.setIsSparkling(isSparkling);
+
+        return wineDTO;
+    }
 }

@@ -6,10 +6,9 @@ import { NewWineFormComponent } from './forms/new-wine-form/new-wine-form.compon
 import { WineListComponent } from './wine-list/wine-list.component';
 import { NewAssessmentFormComponent } from './forms/new-assessment-form/new-assessment-form.component';
 import { WineDetailComponent } from './wine-detail/wine-detail.component';
-// import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
-  { path: 'add-new-wine', component: NewWineFormComponent},
+  { path: 'add-new-wine', component: NewWineFormComponent, },
   { path: 'wines', component: WineListComponent},
   // { path: 'tasted', component: TastedComponent},
   // { path: 'wishlist', component: WishlistComponent},

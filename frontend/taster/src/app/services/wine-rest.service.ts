@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Wine } from '../types/wine';
 import { HttpClient } from '@angular/common/http';
-import { WINES } from '../mock-wines';
-import { Observable, of } from 'rxjs';
-import { Wine2 } from '../types/wine2';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +10,9 @@ export class WineRestService {
 
   constructor(private http: HttpClient) { }
 
-  private wineUrl = 'http://localhost:8080/taste/v1/'
-  wines = WINES;
+  private wineUrl = 'http://localhost:8080/taste/v1/';
 
-  addWine(wine:Wine2): Observable<Wine> {
+  addWine(wine:Wine): Observable<Wine> {
     return this.http.post<Wine>(this.wineUrl, wine);
   }
 
@@ -23,5 +20,15 @@ export class WineRestService {
     // const wine = WINES.find(wine => wine.id === wineId)!;
     const url = `${this.wineUrl}${wineId}`
     return this.http.get<Wine>(url);
+  }
+
+  getAllWines(): Observable<Wine[]> {
+    const url = `${this.wineUrl}`;
+    return this.http.get<Wine[]>(url);
+  }
+
+  getColors(): Observable<string[]> {
+    const url = `${this.wineUrl}/colors`;
+    return this.http.get<string[]>(url);
   }
 }

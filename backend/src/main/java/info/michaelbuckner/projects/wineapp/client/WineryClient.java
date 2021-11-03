@@ -1,12 +1,14 @@
 package info.michaelbuckner.projects.wineapp.client;
 
-import info.michaelbuckner.projects.wineapp.model.Winery;
+import info.michaelbuckner.projects.wineapp.dto.WineryDTO;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient
+@FeignClient(name = "WineryClient", url = "${winery.host}")
 public interface WineryClient {
 
-    @PostMapping("/winery/v1/")
-    public void addWinery(final Winery pWinery);
+	@GetMapping("/winery/v1/{wineryId}")
+	public WineryDTO findById(@PathVariable("wineryId") final int pWineryId);
 }

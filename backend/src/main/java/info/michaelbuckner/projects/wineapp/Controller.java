@@ -1,7 +1,9 @@
 package info.michaelbuckner.projects.wineapp;
 
+import info.michaelbuckner.projects.wineapp.client.WineryClient;
 import info.michaelbuckner.projects.wineapp.dao.WineRepository;
 import info.michaelbuckner.projects.wineapp.dto.WineDTO;
+import info.michaelbuckner.projects.wineapp.dto.WineryDTO;
 import info.michaelbuckner.projects.wineapp.model.Wine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,7 +12,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 @RestController
@@ -21,39 +22,47 @@ public class Controller {
     @Autowired
     WineRepository wineRepository;
 
+    @Autowired
+    WineryClient wineryClient;
+
     @PostMapping("/")
     public WineDTO create(@RequestBody final WineDTO pWineDTO) {
-        pWineDTO.getWinery();
+        Wine wine = wineRepository.save(pWineDTO.toWine());
+        WineryDTO fromWine = wineryClient.findById(wine.getWineryId());
 
-        return WineDTO.of(wineRepository.save(pWineDTO.toWine()));
+        return WineDTO.of(wine);
     }
 
     @GetMapping("/{id}")
     public WineDTO read(@PathVariable("id") final int pId) {
         return  wineRepository.findById(pId)
-                .map(wine -> WineDTO.of(wine))
+                .map(wine -> {
+                    WineryDTO fromWine = wineryClient.findById(wine.getWineryId());
+
+                    return WineDTO.of(wine);
+                })
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/")
     public List<WineDTO> getAllWines() {
         return  StreamSupport.stream(wineRepository.findAll().spliterator(), false)
-                .map(WineDTO::of)
+                .map(wine -> {
+                    WineryDTO fromWine = wineryClient.findById(wine.getWineryId());
+
+                    return WineDTO.of(wine);
+                })
                 .collect(Collectors.toList());
     }
 
     @PutMapping("/{id}")
     public WineDTO update(@PathVariable("id") final int pId, @RequestBody final WineDTO pWineDTO) {
-//        return wineRepository.findById(pId)
-//                .or(() -> {
-//                    pWineDTO.setWineId(pId);
-//                    return WineDTO.of(wineRepository.save(pWineDTO.toWine())); // <-- Needs to be an optional
-//                })
-//                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-
         if (wineRepository.existsById(pId)) {
             pWineDTO.setWineId(pId);
-            return WineDTO.of(wineRepository.save(pWineDTO.toWine()));
+            Wine wine = wineRepository.save(pWineDTO.toWine());
+            WineryDTO fromWine = wineryClient.findById(wine.getWineryId());
+
+            return WineDTO.of(wine);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }

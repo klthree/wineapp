@@ -1,26 +1,6 @@
 <form [formGroup]=formGroup id="add-wine-form"
         (ngSubmit)="onSubmit()"
-        *ngIf="isLoaded">
-    <!-- <div class=form-element>
-        <label for="winery-input" id="winery-label">
-            Winery:
-        </label>
-        <input type="text" formControlName="winery" id="winery-input" class="expanding-text-box"/> 
-    </div> -->
-    
-    <div class=form-element>
-       <label for="region-input" id="region-label">
-           Region:
-       </label> 
-       <input type="text" formControlName="region" id="region-input" class="expanding-text-box"/> 
-    </div>
-
-    <div class=form-sub-element *ngIf="formGroup.controls.region.value">
-        <label for="subregion-input" id="subregion-label">
-            Subregion:
-        </label>
-        <input type="text" formControlName="subregion" id="subregion-input" class="expanding-text-box">
-    </div>
+        *ngIf="wineries !== []">
 
     <div class=form-element>
         <label for="year-input" id="year-label">
@@ -41,11 +21,13 @@
             Winery:
         </label>
         <select formControlName="winery" id="winery-input">
-            <option *ngFor="let w of wineries" value="w.name">
+            <option *ngFor="let w of wineries" value={{w.wineryName}}>
                 {{ w.wineryName }}
-                {{ w.region }}
             </option>
         </select>
+        <button class="mdc-button mdc-button--raised" (click)=openDialog()>
+            <span class="mdc-button__label">Add new winery</span>
+        </button>
     </div>
 
     <div class=form-element>
@@ -65,8 +47,8 @@
             Sparkling:
         </label>
         <select formControlName="isSparkling" id="sparkling-input">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+            <option value=true>Yes</option>
+            <option value=false>No</option>
         </select>
     </div>
 

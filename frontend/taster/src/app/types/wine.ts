@@ -1,9 +1,11 @@
+import { Winery } from "./winery";
+
 export interface Wine {
     id: number;
     wineName: string;
-    wineryName: string;
+    wineryId: number;
     alcoholPercentage: number;
-    color: number;
+    colorId: number;
     year: number;
     isSparkling: string;
 }

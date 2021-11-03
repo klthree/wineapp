@@ -1,0 +1,24 @@
+<form [formGroup]=formGroup id="add-wine-form"
+(ngSubmit)="onSubmit()">
+    <div class=form-element>
+        <label for="winery-input" id="winery-label">
+            Winery:
+        </label>
+        <input type="text" formControlName="winery" id="winery-input" class="expanding-text-box"/> 
+    </div>
+    
+    <div class=form-element>
+        <label for="region-input" id="region-label">
+            Region:
+        </label> 
+        <input type="text" formControlName="region" id="region-input" class="expanding-text-box"/> 
+     </div>
+ 
+     <div class=form-sub-element *ngIf="formGroup.controls.region.value">
+         <label for="subregion-input" id="subregion-label">
+             Subregion:
+         </label>
+         <input type="text" formControlName="subregion" id="subregion-input" class="expanding-text-box">
+     </div>
+     <button type="submit" class="mdc-button mdc-button--raised">Add Winery</button>
+</form>

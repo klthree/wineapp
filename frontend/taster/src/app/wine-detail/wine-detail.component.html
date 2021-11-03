@@ -1,17 +1,10 @@
-<!-- ngif wine-exists
-    show wine-details with wine object passed in
-else 
-    show error component with error code passed in -->
-
-
-<!-- <div *ngIf="wine; then wineBlock else errorBlock"></div> -->
 <div *ngIf="wine">
-    {{wine.id}}
-    {{wine.wineName}}
-    {{wine.wineryName}}
-    {{wine.color}}
-    {{wine.alcoholPercentage}}%
-    {{wine.isSparkling}}
+    {{ wine.id }}
+    {{ wine.wineName }}
+    <!-- TODO - GET WINERY INFO BASED ON WINERYID AND PRINT HERE -->
+    {{ wine.colorId }}
+    {{ wine.alcoholPercentage }}%
+    {{ wine.isSparkling }}
 </div>
 
 
