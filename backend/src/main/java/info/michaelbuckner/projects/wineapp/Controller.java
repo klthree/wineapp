@@ -1,9 +1,12 @@
 package info.michaelbuckner.projects.wineapp;
 
 import info.michaelbuckner.projects.wineapp.client.WineryClient;
+import info.michaelbuckner.projects.wineapp.dao.ColorRepository;
 import info.michaelbuckner.projects.wineapp.dao.WineRepository;
+import info.michaelbuckner.projects.wineapp.dto.ColorDTO;
 import info.michaelbuckner.projects.wineapp.dto.WineDTO;
 import info.michaelbuckner.projects.wineapp.dto.WineryDTO;
+import info.michaelbuckner.projects.wineapp.model.Color;
 import info.michaelbuckner.projects.wineapp.model.Wine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +24,9 @@ public class Controller {
 
     @Autowired
     WineRepository wineRepository;
+
+    @Autowired
+    ColorRepository colorRepository;
 
     @Autowired
     WineryClient wineryClient;
@@ -48,7 +54,6 @@ public class Controller {
     public List<WineDTO> getAllWines() {
         return  StreamSupport.stream(wineRepository.findAll().spliterator(), false)
                 .map(wine -> {
-                    WineryDTO fromWine = wineryClient.findById(wine.getWineryId());
 
                     return WineDTO.of(wine);
                 })
@@ -76,5 +81,12 @@ public class Controller {
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/colors")
+    public List<ColorDTO> getColors() {
+        return StreamSupport.stream(colorRepository.findAll().spliterator(), true)
+                .map(color -> ColorDTO.of(color))
+                .collect(Collectors.toList());
     }
 }

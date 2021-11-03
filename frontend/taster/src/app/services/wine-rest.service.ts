@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Wine } from '../types/wine';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Color } from '../types/color';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +28,8 @@ export class WineRestService {
     return this.http.get<Wine[]>(url);
   }
 
-  getColors(): Observable<string[]> {
+  getColors(): Observable<Color[]> {
     const url = `${this.wineUrl}/colors`;
-    return this.http.get<string[]>(url);
+    return this.http.get<Color[]>(url);
   }
 }

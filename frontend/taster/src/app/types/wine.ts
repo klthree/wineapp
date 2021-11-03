@@ -1,5 +1,3 @@
-import { Winery } from "./winery";
-
 export interface Wine {
     id: number;
     wineName: string;

@@ -16,29 +16,32 @@
         <input type="text" formControlName="wineName" id="wine-input" class="expanding-text-box"/>    
     </div>
 
-    <div class=form-element>
+    <div class=form-element id="winery-box">
         <label for="winery-input" id="winery-label">
             Winery:
         </label>
-        <select formControlName="winery" id="winery-input">
-            <option *ngFor="let w of wineries" value={{w.wineryName}}>
-                {{ w.wineryName }}
-            </option>
-        </select>
-        <button class="mdc-button mdc-button--raised" (click)=openDialog()>
-            <span class="mdc-button__label">Add new winery</span>
-        </button>
+        <div id="winery-input">
+            <select formControlName="winery" id="winery-select">
+                <option *ngFor="let w of wineries" value="{{ w.wineryId }}">
+                    {{ w.wineryName}}
+                </option>
+            </select>
+            <p id="or">-----OR-----</p>
+            <button class="mdc-button mdc-button--raised" (click)=openDialog() id="add-winery-button">
+                <span class="mdc-button__label">Add new winery</span>
+            </button>
+        </div>
     </div>
 
+    
     <div class=form-element>
         <label for="color-input" id="color-label">
             Color:
         </label>
-        <select formControlName="color" id="color-input">
-            <option value="red">Red</option>
-            <option value="white">White</option>
-            <option value="rose">Rose</option>
-            <option value="orange">Orange</option>
+        <select formControlName="colorId" id="color-input">
+            <option *ngFor="let color of colors" value="{{ color.colorId }}">
+                {{ color.colorName | titlecase }}
+            </option>
         </select>
     </div>
 
