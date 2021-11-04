@@ -42,11 +42,7 @@ public class Controller {
     @GetMapping("/{id}")
     public WineDTO read(@PathVariable("id") final int pId) {
         return  wineRepository.findById(pId)
-                .map(wine -> {
-                    WineryDTO fromWine = wineryClient.findById(wine.getWineryId());
-
-                    return WineDTO.of(wine);
-                })
+                .map(wine -> WineDTO.of(wine))
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
@@ -57,6 +53,7 @@ public class Controller {
 
                     return WineDTO.of(wine);
                 })
+                .peek(wineDTO -> System.out.println(wineDTO))
                 .collect(Collectors.toList());
     }
 

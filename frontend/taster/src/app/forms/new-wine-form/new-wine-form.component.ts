@@ -58,18 +58,17 @@ export class NewWineFormComponent implements OnInit {
 
   onSubmit() {
     // const winery = this.wineries.find(winery => {
-    //   return winery.wineryId === this.formGroup.controls.winery.value});
+    //   return winery.wineryId === this.formGroup.value.winery.value});
 
     // if (!!winery) {
       let wine: Wine = {
-        id: -1,
-        wineryId: this.formGroup.controls.winery.value,
-        year: this.formGroup.controls.year.value,
-        wineName: this.formGroup.controls.wineName.value,
-        // color: this.formGroup.controls.color.value,
-        colorId: this.formGroup.controls.color.value,
-        alcoholPercentage: this.formGroup.controls.alcoholPercentage.value,
-        isSparkling: this.formGroup.controls.isSparkling.value
+        wineId: -1,
+        wineryId: this.formGroup.value.winery,
+        year: this.formGroup.value.year,
+        wineName: this.formGroup.value.wineName,
+        colorId: this.formGroup.value.colorId,
+        alcoholPercentage: this.formGroup.value.alcoholPercentage,
+        isSparkling: this.formGroup.value.isSparkling
       }
 
       console.log(wine);

@@ -10,8 +10,8 @@ public class WineryDTO {
 
 	private Integer wineryId;
 	private String wineryName;
-	private Integer regionId;
-	private Integer subregionId;
+	private String regionName;
+	private String subregionName;
 
 	public Winery toWinery() {
 		Winery winery = new Winery();

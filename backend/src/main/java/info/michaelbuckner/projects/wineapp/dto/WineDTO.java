@@ -38,6 +38,7 @@ public class WineDTO {
 
         wineDTO.setWineId(pWine.getWineId());
         wineDTO.setWineName(pWine.getWineName());
+        wineDTO.setWineryId(pWine.getWineryId());
         wineDTO.setYear(pWine.getYear());
         wineDTO.setColorId(pWine.getColorId());
         wineDTO.setAlcoholPercentage(pWine.getAlcoholPercentage());

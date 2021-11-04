@@ -9,7 +9,7 @@ import { WineryRestService } from 'src/app/services/winery-rest.service';
 })
 export class AddWineryFormComponent implements OnInit {
 
-  constructor(wineryService: WineryRestService) { }
+  constructor(private wineryService: WineryRestService) { }
 
   formGroup = new FormGroup({
     winery: new FormControl(),
@@ -21,6 +21,14 @@ export class AddWineryFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    const winery = {
+      wineryId: -1,
+      wineryName: this.formGroup.value.winery,
+      region: this.formGroup.value.region,
+      subregion: this.formGroup.value.subregion
+    }
+    
+    this.wineryService.addWinery(winery).subscribe();
   }
 
 }

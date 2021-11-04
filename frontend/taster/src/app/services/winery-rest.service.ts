@@ -12,7 +12,15 @@ export class WineryRestService {
 
   constructor(private http: HttpClient) { }
 
+  getWinery(wineryId: number): Observable<Winery> {
+    return this.http.get<Winery>(`${this.wineryUrl}${wineryId}`)
+  }
+
   getWineries(): Observable<Winery[]> {
     return this.http.get<Winery[]>(this.wineryUrl);
+  }
+
+  addWinery(winery: Winery): Observable<Winery> {
+    return this.http.post<Winery>(this.wineryUrl, winery);
   }
 }

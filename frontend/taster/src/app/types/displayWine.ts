@@ -1,9 +1,10 @@
-export interface Wine {
-    wineId: number;
+export interface DisplayWine {
     wineName: string;
-    wineryId: number;
     alcoholPercentage: number;
     colorId: number;
     year: number;
     isSparkling: string;
+    wineryName: string;
+    region: string;
+    subregion: string;
 }

@@ -35,10 +35,7 @@ public class Controller {
 	@GetMapping("/{wineryId}")
 	public WineryDTO read(@PathVariable(name = "wineryId") final int pWineryId) {
 		return wineryRepository.findById(pWineryId)
-				.map(winery -> {
-
-					return WineryDTO.of(winery);
-				})
+				.map(winery -> WineryDTO.of(winery))
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 	}
 

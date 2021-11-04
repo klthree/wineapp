@@ -1,7 +1,10 @@
-<ul *ngIf="wines">
-    <li *ngFor="let wine of wines" role="listitem">
-        <a routerLink="/wine/{{wine.wineryId}}">
-            {{ wine.wineName }}
+<ul *ngIf="displayWines !== []">
+    <li *ngFor="let displayWine of displayWines" role="listitem">
+        <a routerLink="/wine/{{displayWine.wineName}}">
+            {{ displayWine.year }}
+            {{ displayWine.wineName }}
+            {{ displayWine.wineryName }}
+            {{ displayWine.region }}
         </a>
     </li>
 </ul>
