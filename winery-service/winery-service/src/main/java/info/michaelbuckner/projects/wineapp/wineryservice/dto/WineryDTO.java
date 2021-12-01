@@ -1,17 +1,15 @@
 package info.michaelbuckner.projects.wineapp.wineryservice.dto;
 
-import info.michaelbuckner.projects.wineapp.wineryservice.dao.WineryRepository;
 import info.michaelbuckner.projects.wineapp.wineryservice.model.Winery;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Data
 public class WineryDTO {
 
 	private Integer wineryId;
 	private String wineryName;
-	private String regionName;
-	private String subregionName;
+	private Integer regionId;
+	private Integer subregionId;
 
 	public Winery toWinery() {
 		Winery winery = new Winery();
