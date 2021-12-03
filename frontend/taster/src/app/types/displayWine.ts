@@ -1,4 +1,5 @@
 export interface DisplayWine {
+    wineId: number;
     wineName: string;
     alcoholPercentage: number;
     colorId: number;

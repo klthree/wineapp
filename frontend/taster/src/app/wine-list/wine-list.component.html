@@ -1,10 +1,31 @@
-<ul *ngIf="displayWines !== []">
+<!-- <ul *ngIf="displayWines !== []">
     <li *ngFor="let displayWine of displayWines" role="listitem">
-        <a routerLink="/wine/{{displayWine.wineName}}">
+        <a routerLink="/wine/{{displayWine.wineId}}">
             {{ displayWine.year }}
             {{ displayWine.wineName }}
             {{ displayWine.wineryName }}
             {{ displayWine.region }}
         </a>
     </li>
-</ul>
+</ul> -->
+
+<div *ngIf="displayWines">
+    <p>{{displayWines[0].year}}</p>
+    <table mat-table [dataSource]="displayWines">
+        <ng-container matColumnDef="displayYear">
+            <th mat-header-cell *matHeaderCellDef> Year </th>
+            <td mat-cell *matCellDef="let displayWine">{{ displayWine.year }}</td>
+        </ng-container>
+        <ng-container matColumnDef="displayName">
+            <th mat-header-cell *matHeaderCellDef> Wine </th>
+            <td mat-cell *matCellDef="let displayWine">{{ displayWine.wineName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="displayWinery">
+            <th mat-header-cell *matHeaderCellDef> Winery </th>
+            <td mat-cell *matCellDef="let displayWine">{{ displayWine.wineryName }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+    </table>
+</div>
