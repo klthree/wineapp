@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin, Observable, from, observable, zip, merge, concat } from 'rxjs';
-import { concatAll, exhaust, exhaustMap, map, mergeAll, pairwise, subscribeOn, switchMap, tap, toArray } from 'rxjs/operators';
+import { concatAll, exhaust, exhaustMap, finalize, map, mergeAll, pairwise, subscribeOn, switchMap, tap, toArray } from 'rxjs/operators';
 import { WineRestService } from '../services/wine-rest.service';
 import { WineryRestService } from '../services/winery-rest.service';
 import { DisplayWine } from '../types/displayWine';
@@ -51,22 +51,24 @@ export class WineListComponent implements OnInit {
                               concatAll()
                             );
 
-    zip(observableWines, observableWineries).subscribe(wine => {
-      let displayWine: DisplayWine = {
-        wineId: wine[0].wineId,
-        wineName: wine[0].wineName,
-        alcoholPercentage: wine[0].alcoholPercentage,
-        colorId: wine[0].colorId,
-        year: wine[0].year,
-        isSparkling: wine[0].isSparkling,
-        wineryName: wine[1].wineryName,
-        region: wine[1].region,
-        subregion: wine[1].subregion
-      }
-
-      this.displayWines.push(displayWine);
-      console.log(wine)
-    })
+    zip(observableWines, observableWineries)
+      .pipe(
+        map(wine => {
+          return {
+            wineId: wine[0].wineId,
+            wineName: wine[0].wineName,
+            alcoholPercentage: wine[0].alcoholPercentage,
+            colorId: wine[0].colorId,
+            year: wine[0].year,
+            isSparkling: wine[0].isSparkling,
+            wineryName: wine[1].wineryName,
+            region: wine[1].region,
+            subregion: wine[1].subregion
+          }
+        }),
+        finalize(() => this.displayWinesLoaded = true)
+      )
+      .subscribe(displayWine => this.displayWines.push(displayWine));
     
     // observableWines.subscribe(wine => {
     //   let displayWine: DisplayWine = {

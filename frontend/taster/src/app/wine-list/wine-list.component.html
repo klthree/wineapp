@@ -9,9 +9,8 @@
     </li>
 </ul> -->
 
-<div *ngIf="displayWines">
-    <p>{{displayWines[0].year}}</p>
-    <table mat-table [dataSource]="displayWines">
+<!-- <div *ngIf="displayWinesLoaded"> -->
+    <table mat-table [dataSource]="displayWines" *ngIf="displayWinesLoaded">
         <ng-container matColumnDef="displayYear">
             <th mat-header-cell *matHeaderCellDef> Year </th>
             <td mat-cell *matCellDef="let displayWine">{{ displayWine.year }}</td>
@@ -28,4 +27,4 @@
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
         <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
     </table>
-</div>
+<!-- </div> -->
