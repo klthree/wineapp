@@ -69,39 +69,5 @@ export class WineListComponent implements OnInit {
         finalize(() => this.displayWinesLoaded = true)
       )
       .subscribe(displayWine => this.displayWines.push(displayWine));
-    
-    // observableWines.subscribe(wine => {
-    //   let displayWine: DisplayWine = {
-    //     wineName: "",
-    //     alcoholPercentage: 0.0,
-    //     colorId: 0,
-    //     year: 1900,
-    //     isSparkling: "",
-    //     wineryName: "",
-    //     region: "",
-    //     subregion: ""
-    //   };
-    //   console.log("Ole " + wine.wineName);
-    //   displayWine.wineName = wine.wineName;
-    //   displayWine.colorId = wine.colorId;
-    //   displayWine.isSparkling = wine.isSparkling;
-    //   displayWine.year = wine.year;
-    //   displayWine.alcoholPercentage = wine.alcoholPercentage;
-
-    //   this.displayWines.push(displayWine);
-    //   // this.wines?.push(wine);
-    // });
-    
-    // observableWineries.subscribe(winery => {
-    //   console.log(this.displayWines)
-    //   console.log(winery)
-      // console.log(winery);
-      // this.wineries?.push(winery)
-      // this.displayWine.wineryName = winery.wineryName;
-      // this.displayWine.region = winery.region;
-      // this.displayWine.subregion = winery.subregion;
-    // });
-
-    // this.wines?.forEach(w => console.log("OLE"));
   }
 }
