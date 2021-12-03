@@ -29,7 +29,7 @@ export class WineListComponent implements OnInit {
   //         subregion: "mobile"
   //     }];
   columnsToDisplay: string[] = ['displayYear', 'displayName', 'displayWinery'];
-
+  displayWinesLoaded: boolean = false;
   // wineries?: Set<Observable<Winery>>;
   wineries?: Winery[];
 
