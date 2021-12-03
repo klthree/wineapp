@@ -14,6 +14,7 @@ import { RadioTemplateComponent } from './forms/radio-template/radio-template.co
 import { WineDetailComponent } from './wine-detail/wine-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 import { AddWineryFormComponent } from './forms/add-winery-form/add-winery-form.component';
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AddWineryFormComponent } from './forms/add-winery-form/add-winery-form.
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule    
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
