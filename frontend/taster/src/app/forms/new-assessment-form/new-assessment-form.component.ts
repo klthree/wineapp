@@ -28,13 +28,15 @@ export class NewAssessmentFormComponent implements OnInit {
     burn: 3,
     visual: '',
     olfactory: '',
-    taste: ''
+    taste: '',
+    comments: ''
   }
 
   descriptionGroup = new FormGroup({
     visual: new FormControl(),
     olfactory: new FormControl(),
-    taste: new FormControl()
+    taste: new FormControl(),
+    comments: new FormControl()
   })
 
   ngOnInit(): void {
