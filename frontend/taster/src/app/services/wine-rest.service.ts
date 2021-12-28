@@ -11,9 +11,10 @@ export class WineRestService {
 
   constructor(private http: HttpClient) { }
 
-  private wineUrl = 'http://localhost:8080/taste/v1/';
+  private wineUrl = 'http://localhost:8093/taste/v1/';
+  // private assessmentUrl = 'http://localhost:8092/assessment/v1/';
 
-  addWine(wine:Wine): Observable<Wine> {
+  addWine(wine: Wine): Observable<Wine> {
     return this.http.post<Wine>(this.wineUrl, wine);
   }
 
@@ -29,7 +30,7 @@ export class WineRestService {
   }
 
   getColors(): Observable<Color[]> {
-    const url = `${this.wineUrl}/colors`;
+    const url = `${this.wineUrl}colors`;
     return this.http.get<Color[]>(url);
   }
 }

@@ -19,7 +19,7 @@ import java.util.stream.StreamSupport;
 
 @RestController
 @RequestMapping("/taste/v1")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 public class Controller {
 
     @Autowired
@@ -48,9 +48,10 @@ public class Controller {
 
     @GetMapping("/")
     public List<WineDTO> getAllWines() {
+
+        System.out.println("In getAllWines()");
         return  StreamSupport.stream(wineRepository.findAll().spliterator(), false)
                 .map(wine -> {
-
                     return WineDTO.of(wine);
                 })
                 .peek(wineDTO -> System.out.println(wineDTO))

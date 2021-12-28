@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ASSESSMENTS } from 'src/app/mock-assessments';
-import { WineRestService } from 'src/app/services/wine-rest.service';
+import { ActivatedRoute } from '@angular/router';
+import { Assessment } from 'src/app/types/assessment';
+import { AssessmentRestService } from 'src/app/services/assessment-rest.service';
 
 @Component({
   selector: 'app-new-assessment-form',
@@ -10,7 +11,8 @@ import { WineRestService } from 'src/app/services/wine-rest.service';
 })
 export class NewAssessmentFormComponent implements OnInit {
 
-  constructor(private wineRestService:WineRestService) { }
+  constructor(private assessmentRestService:AssessmentRestService,
+              private route:ActivatedRoute) { }
 
   aspectLabels = {
     acidity: "acidity",
@@ -20,37 +22,40 @@ export class NewAssessmentFormComponent implements OnInit {
     burn: "burn"
   }
 
-  flavorProfile: {[key: string]: number | string} = {
+  assessment: Assessment = {
+    assessmentId: 0,
+    wineId: Number(this.route.snapshot.paramMap.get('id')),
     acidity: 3,
     tannins: 3,
     sweetness: 3,
     body: 3,
     burn: 3,
-    visual: '',
-    olfactory: '',
-    taste: ''
+    visualDesc: '',
+    olfactoryDesc: '',
+    tasteDesc: '',
+    finalAssessment: '',
+    buyAgain: true
   }
 
   descriptionGroup = new FormGroup({
-    visual: new FormControl(),
-    olfactory: new FormControl(),
-    taste: new FormControl()
+    visualDesc: new FormControl(),
+    olfactoryDesc: new FormControl(),
+    tasteDesc: new FormControl()
   })
 
   ngOnInit(): void {
   }
 
   setAttr(degree: number, attribute: string) {
-    this.flavorProfile[attribute] = degree;
-    console.log(this.flavorProfile);
+    this.assessment[attribute] = degree;
+    console.log(this.assessment);
   }
 
   submitAssessment() {
-    this.flavorProfile.visual = this.descriptionGroup.controls.visual.value;
-    this.flavorProfile.olfactory = this.descriptionGroup.controls.olfactory.value;
-    this.flavorProfile.taste = this.descriptionGroup.controls.taste.value;
+    this.assessment.visualDesc = this.descriptionGroup.controls.visualDesc.value;
+    this.assessment.olfactoryDesc = this.descriptionGroup.controls.olfactoryDesc.value;
+    this.assessment.tasteDesc = this.descriptionGroup.controls.tasteDesc.value;
 
-    ASSESSMENTS.push(this.flavorProfile);
-    console.log(ASSESSMENTS);
+    this.assessmentRestService.addAssessment(this.assessment).subscribe();
   }
 }

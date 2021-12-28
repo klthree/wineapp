@@ -25,5 +25,4 @@ export class WineDetailComponent implements OnInit {
                     .subscribe(result => this.wine = result,
                                err => console.log(err));
   }
-
 }
