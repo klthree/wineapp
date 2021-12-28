@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "GET, POST, PUT, DELETE"
+      routes:
+        - id: wine-service
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/taste/v1/**
+        - id: winery-service
+          uri: http://localhost:8091/
+          predicates:
+            - Path=/winery/v1/**
+        - id: assessments
+          uri: http://localhost:8092/
+          predicates:
+            - Path=/assessment/v1/
+
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway
