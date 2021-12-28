@@ -1,4 +1,4 @@
-package info.michaelbuckner.projects.wineapp;
+package info.michaelbuckner.projects.wineapp.wineservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

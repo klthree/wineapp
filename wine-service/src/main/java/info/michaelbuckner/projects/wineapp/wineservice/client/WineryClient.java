@@ -1,8 +1,7 @@
-package info.michaelbuckner.projects.wineapp.client;
+package info.michaelbuckner.projects.wineapp.wineservice.client;
 
-import info.michaelbuckner.projects.wineapp.dto.WineryDTO;
+import info.michaelbuckner.projects.wineapp.wineservice.dto.WineryDTO;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 

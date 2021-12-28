@@ -1,10 +1,7 @@
-package info.michaelbuckner.projects.wineapp.model;
+package info.michaelbuckner.projects.wineapp.wineservice.model;
 
-import info.michaelbuckner.projects.wineapp.client.WineryClient;
-import info.michaelbuckner.projects.wineapp.dao.WineRepository;
-import info.michaelbuckner.projects.wineapp.dto.WineDTO;
+import info.michaelbuckner.projects.wineapp.wineservice.dto.WineDTO;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 

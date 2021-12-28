@@ -1,4 +1,4 @@
-package info.michaelbuckner.projects.wineapp.model;
+package info.michaelbuckner.projects.wineapp.wineservice.model;
 
 import lombok.*;
 

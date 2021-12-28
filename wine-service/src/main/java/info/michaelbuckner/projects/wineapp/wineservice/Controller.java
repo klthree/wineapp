@@ -1,13 +1,13 @@
-package info.michaelbuckner.projects.wineapp;
+package info.michaelbuckner.projects.wineapp.wineservice;
 
-import info.michaelbuckner.projects.wineapp.client.WineryClient;
-import info.michaelbuckner.projects.wineapp.dao.ColorRepository;
-import info.michaelbuckner.projects.wineapp.dao.WineRepository;
-import info.michaelbuckner.projects.wineapp.dto.ColorDTO;
-import info.michaelbuckner.projects.wineapp.dto.WineDTO;
-import info.michaelbuckner.projects.wineapp.dto.WineryDTO;
-import info.michaelbuckner.projects.wineapp.model.Color;
-import info.michaelbuckner.projects.wineapp.model.Wine;
+import info.michaelbuckner.projects.wineapp.wineservice.client.WineryClient;
+import info.michaelbuckner.projects.wineapp.wineservice.dao.ColorRepository;
+import info.michaelbuckner.projects.wineapp.wineservice.dao.WineRepository;
+import info.michaelbuckner.projects.wineapp.wineservice.dto.ColorDTO;
+import info.michaelbuckner.projects.wineapp.wineservice.dto.WineDTO;
+import info.michaelbuckner.projects.wineapp.wineservice.dto.WineryDTO;
+import info.michaelbuckner.projects.wineapp.wineservice.model.Color;
+import info.michaelbuckner.projects.wineapp.wineservice.model.Wine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

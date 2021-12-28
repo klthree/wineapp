@@ -1,6 +1,6 @@
-package info.michaelbuckner.projects.wineapp.dto;
+package info.michaelbuckner.projects.wineapp.wineservice.dto;
 
-import info.michaelbuckner.projects.wineapp.model.Wine;
+import info.michaelbuckner.projects.wineapp.wineservice.model.Wine;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 

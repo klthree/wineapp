@@ -11,7 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 @Component({
   selector: 'app-wine-list',
   templateUrl: './wine-list.component.html',
-  styleUrls: ['../styles/lists.scss']
+  styleUrls: ['../styles/lists.scss', './wine-list.component.scss']
 })
 export class WineListComponent implements OnInit {
 

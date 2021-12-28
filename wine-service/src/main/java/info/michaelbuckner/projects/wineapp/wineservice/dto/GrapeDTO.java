@@ -1,4 +1,4 @@
-package info.michaelbuckner.projects.wineapp.dto;
+package info.michaelbuckner.projects.wineapp.wineservice.dto;
 
 import lombok.Data;
 

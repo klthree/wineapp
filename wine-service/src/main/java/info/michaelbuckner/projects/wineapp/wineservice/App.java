@@ -1,4 +1,4 @@
-package info.michaelbuckner.projects.wineapp;
+package info.michaelbuckner.projects.wineapp.wineservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
